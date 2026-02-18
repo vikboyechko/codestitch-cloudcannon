@@ -12,6 +12,8 @@ This project is a companion to the blog post: **[CloudCannon Review: The Best Vi
 - Blog posts are managed through CloudCannon's blog editor instead of Decap's markdown editor
 - Everything else remains the same: Eleventy, Nunjucks, Less, and the Codestitch component library
 
+I also added an Events collection and section on the homepage, to showcase how to manage both blog posts and other dynamic collections with CloudCannon. It uses an events template from Codestitch's component library.
+
 ## Quick Start
 
 1. Fork or clone this repository
