@@ -1,0 +1,253 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// EVENTS STYLES
+// Styles for the homepage events-1652 section
+// Event detail pages reuse blog.less styles (#banner-310, #single-article)
+// ─────────────────────────────────────────────────────────────────────────────
+
+/*-- -------------------------- -->
+<---        Events 1652         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #events-1652 {
+        padding: var(--sectionPadding);
+        position: relative;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cs-image-group {
+            width: 100%;
+            max-width: (542/16rem);
+            /* 300px - 480px */
+            height: clamp(18.75rem, 50vw, 30rem);
+            overflow: hidden;
+            border-radius: (16/16rem);
+            display: none;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .cs-event-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            padding: (24/16rem) 0;
+            border-bottom: 1px solid #e8e8e8;
+            display: flex;
+            align-items: center;
+            gap: (20/16rem);
+
+            &:first-of-type {
+                padding-top: 0;
+            }
+
+            &:last-of-type {
+                padding-bottom: 0;
+                border: none;
+            }
+        }
+
+        .cs-date {
+            /* 50px - 70px */
+            width: clamp(3.125rem, 5vw, 4.375rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: none;
+
+            strong {
+                /* 20px - 32px */
+                font-size: clamp(1.25rem, 2.5vw, 2rem);
+                font-weight: 900;
+                line-height: 1.2em;
+                color: var(--primary);
+            }
+
+            span& {
+                /* 14px - 16px */
+                font-size: clamp(0.875rem, 1.5vw, 1rem);
+                line-height: 1.5em;
+                text-transform: uppercase;
+                color: var(--bodyTextColor);
+            }
+        }
+
+        .cs-info-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: (12/16rem);
+        }
+
+        .cs-info {
+            display: flex;
+            flex-direction: column;
+            gap: (4/16rem);
+        }
+
+        .cs-h3 {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            margin: 0;
+            color: var(--headerColor);
+        }
+
+        .cs-location {
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            color: var(--bodyTextColor);
+            display: block;
+        }
+
+        .cs-time {
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            color: var(--bodyTextColor);
+            display: flex;
+            align-items: center;
+            gap: (4/16rem);
+
+            .cs-icon {
+                width: (16/16rem);
+                height: (16/16rem);
+                flex: none;
+            }
+        }
+
+        .cs-button-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .cs-button-solid {
+            font-size: (14/16rem);
+            /* 40px - 48px */
+            line-height: clamp(2.5rem, 3.5vw, 3rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (130/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #events-1652 {
+        .cs-container {
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        .cs-image-group {
+            display: block;
+            flex: none;
+        }
+
+        .cs-event-group {
+            flex: 1;
+        }
+
+        .cs-item {
+            &:first-of-type {
+                padding-top: 0;
+            }
+        }
+
+        .cs-info-wrapper {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #events-1652 {
+            .cs-h3 {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-location,
+            .cs-time {
+                color: var(--bodyTextColorWhite);
+                opacity: 0.8;
+            }
+
+            .cs-date {
+                color: var(--bodyTextColorWhite);
+                opacity: 0.8;
+            }
+
+            .cs-item {
+                border-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+}

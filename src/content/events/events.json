@@ -1,0 +1,7 @@
+{
+    "layout": "layouts/event.html",
+    "tags": "event",
+    "eleventyComputed": {
+        "permalink": "/events/{{ url | slugify }}/index.html"
+    }
+}

@@ -1,0 +1,38 @@
+paths:
+  uploads: src/assets/images
+  static: src
+
+collections_config:
+  pages:
+    path: src/content/pages
+    disable_add: true
+  homepage:
+    path: src
+    glob:
+      - index.html
+    disable_add: true
+    disable_file_actions: true
+  blog:
+    path: src/content/blog
+    schemas:
+      default:
+        path: src/.cloudcannon/schemas/post.md
+  events:
+    path: src/content/events
+    schemas:
+      default:
+        path: src/.cloudcannon/schemas/event.md
+  data:
+    path: src/_data
+    disable_add: true
+    disable_file_actions: true
+    filter:
+      base: none
+      include:
+        - client.js
+
+timezone: America/Chicago
+markdown:
+  engine: commonmark
+  options:
+    html: true
